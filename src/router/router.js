@@ -1,26 +1,20 @@
-import React from "react";
+import React from 'react';
 import {
-  BrowserRouter as Router,
-  Switch,
-  Route
-} from "react-router-dom";
+  BrowserRouter,
+  Switch
+} from 'react-router-dom';
+import RouteWrapper from './RouteWrapper';
+import Layout from '../layout';
+import App from '../components/App';
 
-export default function BasicExample() {
+function RouterConfig() {
   return (
-    <Router>
-      <div>
+    <BrowserRouter>
         <Switch>
-          <Route exact path="/">
-
-          </Route>
-          <Route path="/about">
-
-          </Route>
-          <Route path="/dashboard">
-            
-          </Route>
+          <RouteWrapper path="/" component={App} layout={Layout} />
         </Switch>
-      </div>
-    </Router>
+    </BrowserRouter>
   );
 }
+
+export default RouterConfig;
