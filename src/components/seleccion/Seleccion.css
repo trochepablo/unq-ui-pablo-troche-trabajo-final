@@ -1,24 +1,58 @@
-.containerImagenes{
+
+.containerImagenes {
     display: flex;
     justify-content: space-around;
     border: steelblue;
     border-style: solid;
     border-radius: 3rem;
     padding: 10px;
-    -webkit-box-shadow: 15px 10px 5px -3px rgba(0,0,0,0.31);
--moz-box-shadow: 15px 10px 5px -3px rgba(0,0,0,0.31);
-box-shadow: 15px 10px 5px -3px rgba(0,0,0,0.31);
+    margin: 10px;
+    -webkit-box-shadow: 15px 10px 5px -3px rgba(0, 0, 0, 0.31);
+    -moz-box-shadow: 15px 10px 5px -3px rgba(0, 0, 0, 0.31);
+    box-shadow: 15px 10px 5px -3px rgba(0, 0, 0, 0.31);
 }
 
+.success {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: steelblue;
+    border-style: solid;
+    border-radius: 3rem;
+    padding: 10px;
+    margin: 10px;
+    height: 100px;
+    -webkit-box-shadow: 15px 10px 5px -3px rgba(0, 0, 0, 0.31);
+    -moz-box-shadow: 15px 10px 5px -3px rgba(0, 0, 0, 0.31);
+    box-shadow: 15px 10px 5px -3px rgba(0, 0, 0, 0.31);
+
+    background-color: green;
+    position: relative;
+    -webkit-transition: left 1s ease-in-out, background-color 1s ease-out 1s;
+    transition: left 1s ease-in-out, background-color 1s ease-out 1s;
+}
+
+
 img {
-    border-radius: 50%;
+    filter: opacity(50%);
+    border-radius: 30%;
     -webkit-transition: -webkit-transform .8s ease-in-out;
-            transition:         transform .8s ease-in-out;
-  }
-  img:hover {
-      border-color: seagreen;
-      border-style: solid;
-      cursor: pointer;
-      transform: rotate(360deg);
-      transition: all 0.5s ease-in-out 0s;
-  }
+    transition: transform .8s ease-in-out;
+}
+
+img:hover {
+    filter: opacity(100%);
+    border-color: seagreen;
+    border-style: solid;
+    cursor: pointer;
+    transform: rotate(360deg);
+    transition: all 1.0s ease-in-out 0s;
+}
+
+.selected {
+    filter: opacity(100%);
+    transform: rotate(0deg);
+    transition: all 0.0s ease-in-out 0s;
+    border-color: seagreen;
+    border-style: solid;
+}
