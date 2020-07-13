@@ -5,14 +5,17 @@ import {
 } from 'react-router-dom';
 import RouteWrapper from './RouteWrapper';
 import Layout from '../layout';
-import App from '../components/App';
+import { PVSP, PVSPC } from '../views/pv';
+import App from '../components/App'
 
 function RouterConfig() {
   return (
     <BrowserRouter>
-        <Switch>
-          <RouteWrapper path="/" component={App} layout={Layout} />
-        </Switch>
+      <Switch>
+        <RouteWrapper exact path="/" component={App} layout={Layout} />
+        <RouteWrapper exact path="/pvsp" component={PVSP} layout={Layout} />
+        <RouteWrapper exact path="/pvspc" component={PVSPC} layout={Layout} />
+      </Switch>
     </BrowserRouter>
   );
 }

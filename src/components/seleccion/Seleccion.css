@@ -1,0 +1,24 @@
+.containerImagenes{
+    display: flex;
+    justify-content: space-around;
+    border: steelblue;
+    border-style: solid;
+    border-radius: 3rem;
+    padding: 10px;
+    -webkit-box-shadow: 15px 10px 5px -3px rgba(0,0,0,0.31);
+-moz-box-shadow: 15px 10px 5px -3px rgba(0,0,0,0.31);
+box-shadow: 15px 10px 5px -3px rgba(0,0,0,0.31);
+}
+
+img {
+    border-radius: 50%;
+    -webkit-transition: -webkit-transform .8s ease-in-out;
+            transition:         transform .8s ease-in-out;
+  }
+  img:hover {
+      border-color: seagreen;
+      border-style: solid;
+      cursor: pointer;
+      transform: rotate(360deg);
+      transition: all 0.5s ease-in-out 0s;
+  }

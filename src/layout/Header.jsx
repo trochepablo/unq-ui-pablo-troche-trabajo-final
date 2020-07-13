@@ -6,6 +6,7 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import { SupervisorAccount, PermIdentity, School } from '@material-ui/icons';
 import RulesImage from '../static/RPSLS.png';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   list: {
@@ -65,13 +66,13 @@ function Header() {
           <ListItemIcon>
             <PermIdentity />
           </ListItemIcon>
-          <ListItemText primary={'Jugar Player vs. PC'} />
+          <Link to="/pvspc">Jugar Player vs. PC</Link>
         </ListItem>
         <ListItem button >
           <ListItemIcon>
             <SupervisorAccount />
           </ListItemIcon>
-          <ListItemText primary={'Jugar Player vs. Player'} />
+          <Link to="/pvsp">Jugar Player vs. Player</Link>
         </ListItem>
       </List>
       <Divider />
@@ -92,7 +93,7 @@ function Header() {
           </IconButton>
           <Drawer anchor={'left'} open={state['left']} onClose={toggleDrawer('left', false)}>
               {list('left')}
-          </Drawer>
+            </Drawer>
           <Typography variant="h6" className={classes.title}>
             Rock, Paper, Scissors, Lizard and Spock
           </Typography>
