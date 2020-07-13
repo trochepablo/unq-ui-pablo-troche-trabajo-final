@@ -1,0 +1,12 @@
+.contenedorAcciones{
+    display: flex;
+    justify-content: space-around;
+}
+
+.acciones {
+    margin-top: 2.5rem;
+}
+
+.resultados {
+
+}
