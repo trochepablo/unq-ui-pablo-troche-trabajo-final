@@ -6,7 +6,7 @@ import {
 import RouteWrapper from './RouteWrapper';
 import Layout from '../layout';
 import { PVSP, PVSPC } from '../views/pv';
-import App from '../components/App'
+import App from '../views/home/App' 
 
 function RouterConfig() {
   return (

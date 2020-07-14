@@ -81,7 +81,7 @@ function PVSP() {
         const jugadaPlayer1 = Tipo.find(t => t.tipo === seleccionPlayer1).mataA(seleccionPlayer2)
         const jugadaPlayer2 = Tipo.find(t => t.tipo === seleccionPlayer2).mataA(seleccionPlayer1)
         if (jugadaPlayer1 && !jugadaPlayer2) {
-            if (esJugadorGanador(cantidadWins1)){
+            if (esJugadorGanador(cantidadWins1)) {
                 setMensajeResultado("Felicitaciones Player1 ha ganado la partida!")
                 setVictorias1(victorias1 + 1)
                 setDisableVictory(true)
@@ -94,14 +94,14 @@ function PVSP() {
 
         } else if (jugadaPlayer2 && !jugadaPlayer1) {
 
-            if (esJugadorGanador(cantidadWins2)){
+            if (esJugadorGanador(cantidadWins2)) {
                 setMensajeResultado("Felicitaciones Player1 ha ganado la partida!")
                 setVictorias2(victorias2 + 1)
                 setDisableVictory(true)
             } else {
                 setMensajeResultado("Player 2 ha ganado la partida!")
             }
-            
+
             const cw2 = cantidadWins2 + 1
             setCantidadWins2(cw2)
             setProgressBar2(cw2 * 10)
@@ -200,13 +200,12 @@ function PVSP() {
                         <div>
                             Player 2: {seleccionPlayer2}
                         </div>
-
                     </DialogContentText>
                 </DialogContent>
                 <DialogActions>
                     <Button onClick={handleCloseDialog} color="primary">
-                        Agree
-                </Button>
+                            Agree
+                    </Button>
                 </DialogActions>
             </Dialog>
         </React.Fragment>
