@@ -4,7 +4,7 @@ import Tijera from '../../static/tijera.png'
 import Papel from '../../static/papel.png'
 import Piedra from '../../static/piedra.png'
 import Spock from '../../static/spock.png'
-import Lagartija from '../../static/lagartija.png'
+import Lagarto from '../../static/lagartija.png'
 
 function Seleccion(props) {
 
@@ -21,9 +21,9 @@ function Seleccion(props) {
                         <img className={props.selected === "papel" ? "selected" : ""} src={Papel} alt="papel" onClick={() => handlerClick("papel")}></img>
                         <img className={props.selected === "piedra" ? "selected" : ""} src={Piedra} alt="piedra" onClick={() => handlerClick("piedra")}></img>
                         <img className={props.selected === "spock" ? "selected" : ""} src={Spock} alt="spock" onClick={() => handlerClick("spock")}></img>
-                        <img className={props.selected === "lagartija" ? "selected" : ""} src={Lagartija} alt="lagartija" onClick={() => handlerClick("lagartija")}></img>
+                        <img className={props.selected === "lagarto" ? "selected" : ""} src={Lagarto} alt="lagarto" onClick={() => handlerClick("lagarto")}></img>
                         <div>
-                            {props.player}
+                            <span className={props.colorPlayer}> {props.player}</span>
                         </div>
                     </div>
                 </div>
@@ -33,7 +33,7 @@ function Seleccion(props) {
                 <div>
                     <div className="success">
                         <div>
-                            {props.player}
+                           <span className={props.colorPlayer}> {props.player}</span>
                         </div>
                         Seleccionado.
                     </div>

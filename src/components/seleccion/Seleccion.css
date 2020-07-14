@@ -33,14 +33,14 @@
 }
 
 
-img {
+.containerImagenes > img {
     filter: opacity(50%);
     border-radius: 30%;
     -webkit-transition: -webkit-transform .8s ease-in-out;
     transition: transform .8s ease-in-out;
 }
 
-img:hover {
+.containerImagenes > img:hover {
     filter: opacity(100%);
     border-color: seagreen;
     border-style: solid;

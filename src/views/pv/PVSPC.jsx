@@ -9,9 +9,9 @@ function PVSPC() {
 
     return(
         <React.Fragment>
-            <Seleccion player="PC" selected={seleccionPlayer1} setStateSelected={setSeleccionPlayer1} ></Seleccion>
+            <Seleccion player="PC" colorPlayer="colorPlayer1" selected={seleccionPlayer1} setStateSelected={setSeleccionPlayer1} ></Seleccion>
             <div>{seleccionPlayer1}, {seleccionPlayer2}</div>
-            <Seleccion player="Player 2" selected={seleccionPlayer2} setStateSelected={setSeleccionPlayer2}></Seleccion>
+            <Seleccion player="Player 2" colorPlayer="colorPlayer2" selected={seleccionPlayer2} setStateSelected={setSeleccionPlayer2}></Seleccion>
         </React.Fragment>
     )
 }

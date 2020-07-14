@@ -104,11 +104,10 @@ function Header() {
             anchorEl={anchorEl}
             onClose={handleClose}
             anchorReference="anchorPosition"
-            anchorPosition={{ top: 0, left: 1100 }}
+            anchorPosition={{ top: 0, left: 1225 }}
           >
             <Box className={classes.popover}>
               <div>
-                <span className="text-popover" >Posibles jugadas</span>
                 <img src={RulesImage} alt="rules" />
               </div>
             </Box>
