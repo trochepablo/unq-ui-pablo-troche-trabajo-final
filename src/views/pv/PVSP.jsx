@@ -122,6 +122,7 @@ function PVSP() {
         setCantidadWins2(0)
         setCantidadWins1(0)
         setProgressBar1(0)
+        setProgressBar2(0)
         setVictorias1(0)
         setVictorias2(0)
     }
