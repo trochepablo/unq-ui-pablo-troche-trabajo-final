@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
-import { AppBar, Toolbar, Typography, Button, Drawer, List, Divider, ListItem, ListItemIcon, ListItemText, Popover, Box } from '@material-ui/core'
+import { AppBar, Toolbar, Typography, Button, Drawer, List, ListItem, ListItemIcon, Popover, Box } from '@material-ui/core'
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
-import { SupervisorAccount, PermIdentity, School } from '@material-ui/icons';
+import { SupervisorAccount, PermIdentity } from '@material-ui/icons';
 import RulesImage from '../static/RPSLS.png';
 import { Link } from 'react-router-dom';
 
@@ -73,13 +73,6 @@ function Header() {
             <SupervisorAccount />
           </ListItemIcon>
           <Link to="/pvsp">Jugar Player vs. Player</Link>
-        </ListItem>
-      </List>
-      <Divider />
-      <List>
-        <ListItem button>
-          <ListItemIcon><School /></ListItemIcon>
-          <ListItemText primary={'Tutorial'} />
         </ListItem>
       </List>
     </div>);
