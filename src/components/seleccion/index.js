@@ -14,36 +14,50 @@ function Seleccion(props) {
 
     function tablero() {
         if (!props.selected) {
-           return estadoNoSeleccionado() 
+            return estadoNoSeleccionado()
         } else {
-           return estadoSeleccionado()
+            return estadoSeleccionado()
         }
     }
 
     function estadoNoSeleccionado() {
-        return (
-            <div>
-                <div className={props.selected === "" ? "containerImagenes" : "containerSelected"}>
-                    <img className={props.selected === "tijera" ? "selected" : ""} 
-                    src={Tijera} alt="tijera"  onClick={() => handlerClick("tijera")}/>
-
-                    <img className={props.selected === "papel" ? "selected" : ""} 
-                    src={Papel} alt="papel" onClick={() => handlerClick("papel")}/>
-
-                    <img className={props.selected === "piedra" ? "selected" : ""} 
-                    src={Piedra} alt="piedra" onClick={() => handlerClick("piedra")}/>
-
-                    <img className={props.selected === "spock" ? "selected" : ""} 
-                    src={Spock} alt="spock" onClick={() => handlerClick("spock")}/>
-
-                    <img className={props.selected === "lagarto" ? "selected" : ""} 
-                    src={Lagarto} alt="lagarto" onClick={() => handlerClick("lagarto")}/>
-
-                    <div>
-                        <span className={props.colorPlayer}> {props.player}</span>
+        if (props.esBot) {
+            return (
+                <div>
+                    <div className="success">
+                        <div>
+                            <span className={props.colorPlayer}> {props.player}</span>
+                        </div>
+                        <span>Selección lista.</span>
                     </div>
                 </div>
-            </div>)
+            )
+        } else {
+            return (
+                <div className="selector">
+                    <div className={props.selected === "" ? "containerImagenes" : "containerSelected"}>
+                        <img className={props.selected === "tijera" ? "selected" : ""}
+                            src={Tijera} alt="tijera" onClick={() => handlerClick("tijera")} />
+
+                        <img className={props.selected === "papel" ? "selected" : ""}
+                            src={Papel} alt="papel" onClick={() => handlerClick("papel")} />
+
+                        <img className={props.selected === "piedra" ? "selected" : ""}
+                            src={Piedra} alt="piedra" onClick={() => handlerClick("piedra")} />
+
+                        <img className={props.selected === "spock" ? "selected" : ""}
+                            src={Spock} alt="spock" onClick={() => handlerClick("spock")} />
+
+                        <img className={props.selected === "lagarto" ? "selected" : ""}
+                            src={Lagarto} alt="lagarto" onClick={() => handlerClick("lagarto")} />
+
+                        <div>
+                            <span className={props.colorPlayer}> {props.player}</span>
+                        </div>
+                    </div>
+                </div>
+            )
+        }
     }
 
     function estadoSeleccionado() {

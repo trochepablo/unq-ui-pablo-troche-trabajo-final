@@ -95,7 +95,7 @@ function PVSP() {
         } else if (jugadaPlayer2 && !jugadaPlayer1) {
 
             if (esJugadorGanador(cantidadWins2)) {
-                setMensajeResultado("Felicitaciones Player1 ha ganado la partida!")
+                setMensajeResultado("Felicitaciones Player 2 ha ganado la partida!")
                 setVictorias2(victorias2 + 1)
                 setDisableVictory(true)
             } else {
@@ -205,7 +205,7 @@ function PVSP() {
                 </DialogContent>
                 <DialogActions>
                     <Button onClick={handleCloseDialog} color="primary">
-                            Agree
+                        Aceptar
                     </Button>
                 </DialogActions>
             </Dialog>
