@@ -5,6 +5,9 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Button, LinearProgress, Snackbar, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Slide } from '@material-ui/core'
 import MuiAlert from '@material-ui/lab/Alert';
 import Tipo from '../../entities/Tipos';
+import PropTypes from 'prop-types';
+import Typography from '@material-ui/core/Typography';
+import Box from '@material-ui/core/Box';
 
 const useStyles = makeStyles({
     root: {
@@ -23,6 +26,25 @@ const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="up" ref={ref} {...props} />;
 });
 
+function LinearProgressWithLabel(props) {
+    return (
+      <Box display="flex" alignItems="center">
+        <Box width="100%" mr={1}>
+          <LinearProgress variant="determinate" {...props} />
+        </Box>
+        <Box minWidth={35}>
+          <Typography variant="body2" color="primary">{`${Math.round(props.value / 33.3)}`}</Typography>
+        </Box>
+      </Box>
+    );
+  }
+  
+  LinearProgressWithLabel.propTypes = {
+    value: PropTypes.number.isRequired,
+  };
+
+  const normalise = value => (value - 0) * 100 / (3 - 0);
+
 function PVSPC() {
 
 
@@ -37,9 +59,6 @@ function PVSPC() {
 
     const [cantidadWins1, setCantidadWins1] = useState(0);
     const [cantidadWins2, setCantidadWins2] = useState(0);
-
-    const [progressBar1, setProgressBar1] = useState(0);
-    const [progressBar2, setProgressBar2] = useState(0);
 
     const [openDialog, setOpenDialog] = useState(false);
 
@@ -97,7 +116,6 @@ function PVSPC() {
             }
             const cw1 = cantidadWins1 + 1
             setCantidadWins1(cw1)
-            setProgressBar1(cw1 * 10)
 
         } else if (jugadaPlayer2 && !jugadaPlayer1) {
 
@@ -111,7 +129,6 @@ function PVSPC() {
 
             const cw2 = cantidadWins2 + 1
             setCantidadWins2(cw2)
-            setProgressBar2(cw2 * 10)
         } else {
             setMensajeResultado("Ha sido un empate!")
         }
@@ -119,7 +136,7 @@ function PVSPC() {
     }
 
     function esJugadorGanador(cantidadWins) {
-        return cantidadWins === 9
+        return cantidadWins === 2
     }
 
     function reiniciar() {
@@ -128,10 +145,9 @@ function PVSPC() {
         setCantidadWins1(0)
         setCantidadWins2(0)
         setCantidadWins1(0)
-        setProgressBar1(0)
-        setProgressBar2(0)
         setVictorias1(0)
         setVictorias2(0)
+        setDisableVictory(false)
     }
 
     function siguienteRonda() {
@@ -140,8 +156,6 @@ function PVSPC() {
         setCantidadWins1(0)
         setCantidadWins2(0)
         setCantidadWins1(0)
-        setProgressBar1(0)
-        setProgressBar2(0)
         setDisableVictory(false)
     }
 
@@ -158,10 +172,10 @@ function PVSPC() {
                 <div className={classes.root}>
                     <div><h3>Resultado partida actual</h3></div>
                     <span className="colorPlayer1" >BOT IA</span>
-                    <LinearProgress variant="determinate" color="primary" value={progressBar1} />
+                    <LinearProgressWithLabel variant="determinate" color="primary" value={normalise(cantidadWins1)} />
                     <br></br>
                     <span className="colorPlayer2" >Player 1</span>
-                    <LinearProgress variant="determinate" color="secondary" value={progressBar2} />
+                    <LinearProgressWithLabel variant="determinate" color="secondary" value={normalise(cantidadWins2)} />
                     <br></br>
                 </div>
                 <div className="acciones">
