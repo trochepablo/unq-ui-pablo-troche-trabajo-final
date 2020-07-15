@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React  from 'react'
 import './Seleccion.css'
 import Tijera from '../../static/tijera.png'
 import Papel from '../../static/papel.png'

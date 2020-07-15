@@ -100,6 +100,8 @@ function Header() {
             anchorPosition={{ top: 0, left: 1225 }}
           >
             <Box className={classes.popover}>
+              <div><u>Condiciones</u> </div>
+              <div>- El primero en ganar 3 jugadas gana la partida</div>
               <div>
                 <img src={RulesImage} alt="rules" />
               </div>
